@@ -1,2 +1,2 @@
-# Words
-This is to make Random Words Quotes Website
+# Projects
+This is my Random Project Repository here You can get to know my Skills which I have used in various Projects
