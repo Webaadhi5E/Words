@@ -4,6 +4,11 @@
     overflow-x: hidden;
 }
 
+.main-content{
+    height: fit-content;
+    overflow-y: auto;
+}
+
 .logo{
     height: 36px;
 }
