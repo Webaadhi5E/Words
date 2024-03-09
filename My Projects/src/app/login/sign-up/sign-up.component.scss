@@ -1,0 +1,68 @@
+.signin-required-text {
+    display: inline-block;
+}
+
+.reset-button {
+    border-radius: 20px;
+    color: #000000;
+    background-color: #ffffff;
+    opacity: 0.2;
+    // -webkit-transition: color 0.5s, background-color 0.5s;
+    // -moz-transition: color 0.5s, background-color 0.5s;
+    // -o-transition: color 0.5s, background-color 0.5s;
+}
+
+.reset-button:hover{
+  opacity: 1.0;
+}
+
+.icon {
+    color: rgba(0, 0, 0, 0.25);
+    padding-top: .75rem;
+}
+
+.signin {
+    color: #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.password-validators-group {
+    margin-top: 1.5rem !important;
+  
+    ul {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      list-style: none;
+    }
+  
+    .check-list-heading {
+      font-weight: bold;
+    }
+  
+    .password-validators {
+      color: rgba(0, 0, 0, 0.5);
+      font-family: "SF Pro Text";
+      font-size: 13px;
+      letter-spacing: 0;
+      line-height: 24px;
+  
+      i {
+        width: 1.5rem;
+        text-align: center;
+      }
+  
+      .check {
+        color: #9cce7c !important;
+      }
+  
+      .uncheck {
+        color: #e84f4f !important;
+      }
+    }
+  }
+  

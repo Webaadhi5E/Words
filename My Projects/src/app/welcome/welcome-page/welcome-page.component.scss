@@ -1,6 +1,10 @@
-
-
-.landing-img {
-    object-fit:fill;
-    aspect-ratio: 16 / 9;
+.main-page {
+    border: 1px solid red;
+    height: calc(100vh - 56px);
+    overflow: hidden;
 }
+
+// .landing-img {
+//     object-fit:fill;
+//     aspect-ratio: 16 / 9;
+// }
