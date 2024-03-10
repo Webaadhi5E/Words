@@ -19,7 +19,9 @@ export class SignUpComponent {
     public confirmpasswordtxt: string = '';
     public showPasswordSection = false;
   
-    constructor(private http: HttpClient, private formbuilder: FormBuilder, private router:Router) { }
+    constructor(private http: HttpClient, private formbuilder: FormBuilder, private router:Router) {
+      
+     }
   
     // convenience getter for easy access to form fields
     public get form() { return this.registrationForm.controls; }
