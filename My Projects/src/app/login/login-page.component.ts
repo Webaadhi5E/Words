@@ -57,7 +57,6 @@ export class LoginPageComponent {
     }
     else {
       console.log("2222222222");
-      this.route.navigate(["/login"])
       alert("enter valid emailid & Password")
     }
   }
