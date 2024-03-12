@@ -54,6 +54,7 @@ export class SignUpComponent {
 
     this.router.navigate(['/login'])
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registrationForm.value, null, 4));
+    this.onReset();
 
   }
 
