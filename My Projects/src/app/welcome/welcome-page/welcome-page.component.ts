@@ -1,54 +1,28 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from 'src/app/common/header/header.component';
-
+import { UserFormComponent } from 'src/app/page/user-form/user-form.component';
 @Component({
   selector: 'app-welcome-page',
   standalone: true,
-  imports: [HeaderComponent, RouterOutlet, ReactiveFormsModule, FormsModule, CommonModule],
+  imports: [HeaderComponent, RouterOutlet, ReactiveFormsModule, FormsModule, CommonModule, FontAwesomeModule, UserFormComponent],
   templateUrl: './welcome-page.component.html',
   styleUrl: './welcome-page.component.scss'
 })
 export class WelcomePageComponent {
 
-  public UserDetailForm!: FormGroup;
-  public userAge: Array<any> = [
-    { ageLimit: "0 - 20" },
-    { ageLimit: "20 - 40" },
-    { ageLimit: "40 - 60" },
-    { ageLimit: "60 - 80" },
-    { ageLimit: "80 - 100" },
-
-  ]
-  public formDetails: any[] = [];
-
-
+  public userDetails: Array<any> = [];
   constructor() {
-    this.prepareFormObj();
-    console.log(this.UserDetailForm.value);
 
   }
 
-  public prepareFormObj() {
-    this.UserDetailForm = new FormGroup({
-      name: new FormControl('', [Validators.required]),
-      age: new FormControl(),
-      gender: new FormControl(),
-      hobbies: new FormControl(),
-      confirm: new FormControl(false, [Validators.required])
-    })
-  }
-
-  public resetForm() {
-    this.UserDetailForm.reset();
-  }
-
-  public onSubmit() {
-    this.formDetails = this.UserDetailForm.value;
-    console.log(this.formDetails);
-
-
+  public getUserDetail(e: any) {
+    const dataDetails = e;
+    this.userDetails.push(dataDetails);
+    console.log(this.userDetails);
+    
   }
 }
