@@ -16,7 +16,7 @@
                 </div>
                 <div class="user-detail-grid-body" style="overflow-y: hidden;">
                     <div class="user-detail-grid-body-loop">
-                        @for (item of userDetails; track $index) {
+                        @for (item of userDetails; track item;let i=$index) {
                         <div>
                             {{item.name}}
                         </div>
@@ -30,7 +30,8 @@
                             {{item.hobbies}}
                         </div>
                         <div>
-                            Delete
+                            <button class="btn btn-warning w-25" type="button"
+                                (click)="removeUserDetails(i)">Delete</button>
                         </div>
                         }
                     </div>

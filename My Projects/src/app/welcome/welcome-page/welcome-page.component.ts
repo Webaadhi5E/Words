@@ -23,6 +23,11 @@ export class WelcomePageComponent {
     const dataDetails = e;
     this.userDetails.push(dataDetails);
     console.log(this.userDetails);
+  }
+
+  public removeUserDetails(index:any){
+    this.userDetails.splice(index,1);
+    console.log(this.userDetails);
     
   }
 }
