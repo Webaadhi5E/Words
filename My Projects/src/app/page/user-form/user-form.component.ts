@@ -30,7 +30,7 @@ export class UserFormComponent {
   ]
   public formDetails: any[] = [];
   public addedHobbies: Array<any> = [];
-
+  public hobbies: string = "";
   constructor() {
     this.prepareFormObj();
 
@@ -52,17 +52,26 @@ export class UserFormComponent {
 
   public onSubmit() {
     this.addHobbies();
-
+    this.UserDetailForm.patchValue({
+      hobbies: this.addedHobbies,
+    })
     this.formDetails = this.UserDetailForm.value;
     console.log(this.formDetails);
-
+    this.addedHobbies = [];
+    localStorage.setItem('mykey', JSON.stringify(this.UserDetailForm.value))
     this.UserDetailForm.reset();
     this.emitUserForm.emit(this.formDetails)
   }
 
   public addHobbies() {
-    this.addedHobbies.push(this.UserDetailForm.value['hobbies']);
-    console.log(this.addedHobbies);
-
+    let selectedHobiies = this.UserDetailForm.value['hobbies'];
+    if (this.addedHobbies.length === 0) {
+      this.addedHobbies.push(selectedHobiies)
+    } else if (!this.addedHobbies.includes('hobbies')) {
+      this.addedHobbies.push(selectedHobiies);
+    } else {
+      alert("Hobbies are already Existed");
+    }
+    this.hobbies = "";
   }
 }
