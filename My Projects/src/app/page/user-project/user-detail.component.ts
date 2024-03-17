@@ -1,18 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserFormComponent } from './user-form.component';
 import { HeaderComponent } from 'src/app/common/header/header.component';
-import { UserFormComponent } from 'src/app/page/user-project/user-form.component';
+
 @Component({
-  selector: 'app-welcome-page',
+  selector: 'app-user-detail',
   standalone: true,
-  imports: [HeaderComponent, RouterOutlet, ReactiveFormsModule, FormsModule, CommonModule, FontAwesomeModule, UserFormComponent],
-  templateUrl: './welcome-page.component.html',
-  styleUrl: './welcome-page.component.scss'
+  imports: [CommonModule,ReactiveFormsModule,UserFormComponent,HeaderComponent],
+  templateUrl: './user-detail.component.html',
+  styleUrl: './user-detail.component.scss'
 })
-export class WelcomePageComponent {
+export class UserDetailComponent {
 
   public userDetails: Array<any> = [];
   constructor() {

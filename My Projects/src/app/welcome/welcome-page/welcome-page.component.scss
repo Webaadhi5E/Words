@@ -1,28 +1,14 @@
 .main-page {
-    border: 1px solid red;
-    height: calc(100vh - 56px);
-    overflow: hidden;
+    height: calc(100vh - 174px)
 }
 
-.user-detail-grid-header {
-    height: 48px;
-    border: 1px solid #d9d9d9;
-    display: grid;
-    grid-template-columns: repeat(5, auto);
+header,
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
 }
 
-.user-detail-grid-body {
-    height: calc(100vh - 350px);
-    border: 1px solid #d9d9d9;
-    overflow: auto;
-
-    .user-detail-grid-body-loop {
-        display: grid;
-        grid-template-columns: repeat(5, auto);
-
-    }
-
-}
 
 // .landing-img {
 //     object-fit:fill;

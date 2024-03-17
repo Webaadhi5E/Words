@@ -1,0 +1,19 @@
+.user-detail-grid-header {
+    height: 48px;
+    border: 1px solid #d9d9d9;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+}
+
+.user-detail-grid-body {
+    height: calc(100vh - 350px);
+    border: 1px solid #fb0202;
+    overflow: auto;
+
+    .user-detail-grid-body-loop {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+
+    }
+
+}
