@@ -1,0 +1,39 @@
+<div>
+    <app-header></app-header>
+    <div class="row h-100">
+        <div class="col-md-3">
+            <app-user-form (emitUserForm)="getUserDetail($event)"></app-user-form>
+        </div>
+        <div class="col-md-9 p-0">
+    
+            <div class="user-detail-grid-header my-2">
+                <div class="d-flex flex-row align-items-center ms-2">Name</div>
+                <div class="d-flex flex-row align-items-center ms-2">Age</div>
+                <div class="d-flex flex-row align-items-center ms-2">Gender</div>
+                <div class="d-flex flex-row align-items-center ms-2">Hobbies</div>
+                <div class="d-flex flex-row align-items-center ms-2">Delete</div>
+            </div>
+            <div class="user-detail-grid-body" style="overflow-y: hidden;">
+                <div class="user-detail-grid-body-loop">
+                    @for (item of userDetails; track item;let i=$index) {
+                    <div>
+                        {{item.name}}
+                    </div>
+                    <div>
+                        {{item.age}}
+                    </div>
+                    <div>
+                        {{item.gender}}
+                    </div>
+                    <div>
+                        {{item.hobbies}}
+                    </div>
+                    <div>
+                        <button class="btn btn-warning" type="button" (click)="removeUserDetails(i)">Delete</button>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

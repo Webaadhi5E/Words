@@ -4,8 +4,9 @@ import { WelcomePageComponent } from './welcome/welcome-page/welcome-page.compon
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
-  { path: 'welcome', loadChildren: () => import('./welcome/welcome-page/welcome-routing.module').then((m) => m.WelcomeRoutingModule) },
-  { path: 'login', loadChildren: () => import('./login/login-routing.module').then((m) => m.LoginRoutingModule) }
+  { path: 'welcome', loadChildren: () => import('./routes/welcome-routing.module').then((m) => m.WelcomeRoutingModule) },
+  { path: 'login', loadChildren: () => import('./routes/login-routing.module').then((m) => m.LoginRoutingModule) },
+  { path: 'project', loadChildren: () => import('./routes/project-routing.module').then((m) => m.ProjectRoutingModule) }
 
 ];
 

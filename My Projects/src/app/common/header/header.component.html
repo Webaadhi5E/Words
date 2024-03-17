@@ -10,10 +10,28 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="dropdown" (mouseleave)="isOpen = false">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    aria-haspopup="true" aria-expanded="false" (click)="isOpen = !isOpen">
+                    Projects
+                </button>
+                <ul class="dropdown-menu" [class.show]="isOpen" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" [routerLink]="['/project/user-details']"
+                            routerLinkActive="router-link-active">Users</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/project/color-pallet']"
+                            routerLinkActive="router-link-active">Color-Pallet</a></li>
+                    <li><a class="dropdown-item" href="#">Periodic-Table</a></li>
+                </ul>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 px-4">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="https://github.com/Webaadhi5E" [target]="'blank'">GitHub</a>
+                        <a class="nav-link active" aria-current="page" [routerLink]="['/welcome/welcome-page']"
+                            routerLinkActive="router-link-active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="https://github.com/Webaadhi5E"
+                            [target]="'blank'">GitHub</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/login/login']"
