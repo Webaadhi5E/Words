@@ -3,14 +3,40 @@
     <div class="color-pallets">
         <div class="d-flex align-items-center justify-content-center h-100">
             <div class="d-flex align-items-center justify-content-center gap-2 h-100 w-100">
-                @for (pallets of colorPallet; track $index) {
-                <div class="pallets h-50 d-inline-block" style="width: 150px;" [style.backgroundColor]="pallets">
-                    {{pallets}}
+                <div class="side-icon d-block my-auto">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <fa-icon [icon]="faPlus" (click)="leftSide()"></fa-icon>
+                    </div>
+                </div>
+                @for (pallets of colorPallet; track pallets;let i=$index) {
+                <div class="pallets position-relative" [style.backgroundColor]="pallets">
+                    <div class="fw-bold fs-4">
+                        {{pallets}}
+                    </div>
+                    @if (colorShades.includes(pallets)) {
+                    @for (shades of colorShades; track colorShades;let j = $index) {
+                    <div class="shades" [style.backgroundColor]="shades">
+                      <div class="fw-bold fs-5">
+                        {{shades}}
+                      </div>
+                    </div>
+                    }
+                    }
+                    <div class="table-icon">
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <fa-icon [icon]="faTableCells" (click)="getShades(pallets)"></fa-icon>
+                        </div>
+                    </div>
                 </div>
                 }
+                <div class="side-icon d-block my-auto">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <fa-icon [icon]="faPlus" (click)="rightSide()"></fa-icon>
+                    </div>
+                </div>
             </div>
         </div>
-        <div>
+        <div class="d-flex align-items-center justify-content-center gap-2">
             <button class="btn btn-primary" type="button" (click)="generateColor()">Generate Colors</button>
         </div>
     </div>
