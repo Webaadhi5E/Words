@@ -37,7 +37,10 @@ export class PeriodicTableComponent {
   ]
 
   constructor() {
-    console.log(this.candidateDetails);
 
+  }
+
+  public generateStar(skillStarLevel: number): number[] {
+    return Array.from({ length: Math.floor(skillStarLevel) }, (_, i) => i);
   }
 }
