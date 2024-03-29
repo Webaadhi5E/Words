@@ -1,24 +1,4 @@
 <div class="main-container h-100">
-    <div class="container p-2">
-        @for (item of candidateDetails; track candidateDetails;let i=$index) {
-        <div class="card h-100 my-2">
-            <div class="card-body">
-                <div class="d-flex align-item-center justify-content-center gap-2">
-                    {{item.skillName}}&nbsp;-
-                    <div>
-                        {{item.skillLevel}}
-                    </div>
-                </div>
-                <div class="text-center mt-2">
-                    @for (star of generateStar(item.skillLevel); track $index) {
-                    &#9733;
-                    }@if (item.skillLevel - generateStar(item.skillLevel).length > 0) {
-                    &#9734;
-                    }
-                </div>
-            </div>
-        </div>
-        }
-    </div>
+    
 
 </div>

@@ -9,38 +9,4 @@ import { Component } from '@angular/core';
 })
 export class PeriodicTableComponent {
 
-  public candidateDetails: Array<any> = [
-    {
-      skillName: "Python",
-      skillLevel: 3.5
-    },
-    {
-      skillName: "Node-Js",
-      skillLevel: 2.5
-    },
-    {
-      skillName: "Javascript",
-      skillLevel: 4.5
-    },
-    {
-      skillName: "Angular",
-      skillLevel: 4.5
-    },
-    {
-      skillName: "Java",
-      skillLevel: 2.5
-    },
-    {
-      skillName: "Project Management",
-      skillLevel: 4.5
-    },
-  ]
-
-  constructor() {
-
-  }
-
-  public generateStar(skillStarLevel: number): number[] {
-    return Array.from({ length: Math.floor(skillStarLevel) }, (_, i) => i);
-  }
 }
