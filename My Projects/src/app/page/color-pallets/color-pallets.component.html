@@ -10,13 +10,13 @@
                 </div>
                 @for (pallets of colorPallet; track pallets;let i=$index) {
                 <div class="pallets position-relative" [style.backgroundColor]="pallets">
-                    <div class="fw-bold fs-4">
+                    <div class="fw-bold">
                         {{pallets}}
                     </div>
                     @if (colorShades.includes(pallets)) {
                     @for (shades of colorShades; track colorShades;let j = $index) {
                     <div class="shades" [style.backgroundColor]="shades">
-                      <div class="fw-bold fs-5">
+                      <div class="fw-bold">
                         {{shades}}
                       </div>
                     </div>
