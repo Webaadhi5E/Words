@@ -1,6 +1,25 @@
 <div class="h-100">
     <app-header></app-header>
-    <div>
-        ftgyhnjkmsddnkvnk
+    <div class="container">
+        <div class="row">
+            @for(table of tablesList;track $index){
+            @if(table !=0){
+            <div class="col-md-3">
+                <table>
+                    <thead>
+                        <th>Multiplication&nbsp;{{table}}
+                        <th>
+                    </thead>
+                    @for(item of getTablesList(10); track $index){
+                    <tbody>
+                        <td>{{table+" * "+item+" = "+table*item}}
+                        <td>
+                    </tbody>
+                    }
+                </table>
+            </div>
+            }
+            }
+        </div>
     </div>
 </div>

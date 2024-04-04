@@ -10,5 +10,13 @@ import { HeaderComponent } from 'src/app/common/header/header.component';
   styleUrl: './multiplication-tables.component.scss'
 })
 export class MultiplicationTablesComponent {
+  public tablesList: Array<any> = [];
 
+  constructor() {
+    this.tablesList = this.getTablesList(10);
+  }
+
+  public getTablesList(a: any) {
+    return new Array(a).fill(0).map((a: any, index: any) => index + 1)
+  }
 }
