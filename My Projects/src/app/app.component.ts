@@ -12,6 +12,6 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
   imports: [CommonModule, FontAwesomeModule, RouterLink, RouterLinkActive,RouterOutlet]
 })
 export class AppComponent {
-
+public title:string='randomWords';
   public faUser = faUser;
 }
