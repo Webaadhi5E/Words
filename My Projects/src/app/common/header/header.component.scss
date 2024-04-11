@@ -1,3 +1,14 @@
 .logo {
     height: 36px;
 }
+
+.scroll-final-content {
+    transform: translateY(0px);
+    transition: 2s;
+}
+
+.scroll-pos-content {
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 1s;
+}

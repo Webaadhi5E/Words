@@ -1,5 +1,19 @@
-<main class="welcome-main">
-    <app-header></app-header>
-    <div class="main-page border-2">
+<main class="welcome-main h-100">
+    <app-header [scroll]="scrollValue"></app-header>
+    <div class="main-page">
+        <section class="section-1">
+            <div class="d-flex align-items-center justify-content-center">
+                <form class="d-flex w-25" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+        <section class="section-2">
+
+        </section>
+        <section class="section-3">
+
+        </section>
     </div>
 </main>

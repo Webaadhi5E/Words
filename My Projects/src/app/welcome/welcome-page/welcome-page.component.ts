@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -12,11 +12,20 @@ import { UserFormComponent } from 'src/app/page/user-project/user-form.component
   templateUrl: './welcome-page.component.html',
   styleUrl: './welcome-page.component.scss'
 })
-export class WelcomePageComponent {
+export class WelcomePageComponent implements OnInit, OnDestroy {
 
   public userDetails: Array<any> = [];
+  public scrollValue: number = 0;
   constructor() {
     localStorage.getItem('data')
+  }
+
+  ngOnInit() {
+    window.addEventListener('scroll', this.scrollEvent, true);
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('scroll', this.scrollEvent, true);
   }
 
   public getUserDetail(e: any) {
@@ -31,4 +40,9 @@ export class WelcomePageComponent {
     console.log(this.userDetails);
 
   }
+
+  public scrollEvent = (event: any): void => {
+    this.scrollValue = event.srcElement.scrollTop;
+  }
+
 }
