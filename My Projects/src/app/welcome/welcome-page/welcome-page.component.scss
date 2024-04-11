@@ -1,5 +1,8 @@
 .main-page {
-    height: calc(100vh - 174px)
+    height: calc(100vh - 54px);
+    border: 2px solid green;
+    overflow: auto;
+    overflow-y: auto;
 }
 
 header,
@@ -9,6 +12,26 @@ footer {
     padding: 20px;
 }
 
+.section-1 {
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d058cea6-7f58-4269-a120-8316a4939c31/dfadpu5-8bb480ea-a180-4dad-8b04-41a3959cc76f.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QwNThjZWE2LTdmNTgtNDI2OS1hMTIwLTgzMTZhNDkzOWMzMVwvZGZhZHB1NS04YmI0ODBlYS1hMTgwLTRkYWQtOGIwNC00MWEzOTU5Y2M3NmYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yf40TGVNIEg27k6RKICR1bhUEwkfC1R5ZlcFN_kcplU');
+    background-size: cover;
+    background-position: center center;
+    height: 50%;
+}
+
+.section-2 {
+    background-image: url("https://food.unl.edu/newsletters/images/food-groups.png");
+    background-size: cover;
+    background-position: center center;
+    height: 50%;
+}
+
+.section-3 {
+    background-image: url("https://www.healthkart.com/connect/wp-content/uploads/2023/01/900x500_banner_HK-Types-of-foods-that-you-should-eat-a-lot-rarely-and-occasionally.png");
+    background-size: cover;
+    background-position: center center;
+    height: 50%;
+}
 
 // .landing-img {
 //     object-fit:fill;
