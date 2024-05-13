@@ -6,12 +6,13 @@
                     User</button>
             </div>
             <div class="ms-auto">
-                <input class="form-control me-2" type="search" placeholder="Search User" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Search User" aria-label="Search"
+                    (keyup.enter)="searchItem($event)">
             </div>
         </div>
         <div class="row example-boundary h-100">
             <div class="col-md-12 candidate-details-page">
-                @for (listUser of displayedUserDetails; track $index) {
+                @for (listUser of displayedUserDetails; let i= $index;track listUser) {
                 <div class="card my-4">
                     <div class="card-body">
                         <div class="card-header">
@@ -22,7 +23,8 @@
                                 <div class="d-flex align-items-center gap-2 ms-auto">
                                     <div>
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#renameModal">Rename</button>
+                                            data-bs-target="#renameModal"
+                                            (click)="changeName(listUser.name,i)">Rename</button>
                                     </div>
                                     <div>
                                         <button type="button" class="btn btn-primary">Remove</button>
