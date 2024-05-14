@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-crud-app',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, BrowserModule],
   templateUrl: './crud-app.component.html',
   styleUrl: './crud-app.component.scss'
 })
@@ -78,5 +79,9 @@ export class CrudAppComponent {
         }
       })
     }
+  }
+
+  public openAddNewPopUp() {
+
   }
 }
