@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from 'src/app/common/header/header.component';
 
 @Component({
   selector: 'app-student-details',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, HeaderComponent],
   templateUrl: './student-details.component.html',
   styleUrl: './student-details.component.scss'
 })
