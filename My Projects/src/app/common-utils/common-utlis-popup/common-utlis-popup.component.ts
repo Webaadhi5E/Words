@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
+declare let bootstrap: any;
 @Component({
   selector: 'app-common-utlis-popup',
   standalone: true,
@@ -9,4 +10,14 @@ import { Component } from '@angular/core';
 })
 export class CommonUtlisPopupComponent {
 
+  public userPopup: any;
+
+  constructor() {
+
+  }
+
+  public openModalPopup() {
+    this.userPopup = new bootstrap.Modal("#addUserModal");
+    this.userPopup.show();
+  }
 }

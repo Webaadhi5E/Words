@@ -1,18 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonUtlisPopupComponent } from 'src/app/common-utils/common-utlis-popup/common-utlis-popup.component';
+import { HeaderComponent } from 'src/app/common/header/header.component';
+
 
 @Component({
   selector: 'app-crud-app',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, BrowserModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule,HeaderComponent],
   templateUrl: './crud-app.component.html',
   styleUrl: './crud-app.component.scss'
 })
 export class CrudAppComponent {
 
-
+  @ViewChild('commonPopUp', { read: ViewContainerRef })
+  commonPopUpContainer!: ViewContainerRef;
+  public commonPopUpComp!: ComponentRef<CommonUtlisPopupComponent>;
 
   public userObj: Array<any> = [
     {
@@ -82,6 +87,8 @@ export class CrudAppComponent {
   }
 
   public openAddNewPopUp() {
-
+    this.commonPopUpContainer.clear();
+    this.commonPopUpComp = this.commonPopUpContainer.createComponent(CommonUtlisPopupComponent);
+    this.commonPopUpComp.instance.openModalPopup();
   }
 }
