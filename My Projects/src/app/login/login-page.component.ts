@@ -36,27 +36,21 @@ export class LoginPageComponent {
   }
 
   public onSubmit() {
-    console.log("//////////");
     this.enterdData = JSON.stringify(this.loginForm.value);
-    console.log(this.enterdData);
     this.checkLocalData(JSON.parse(this.enterdData));
   }
 
   public checkLocalData(data: any) {
     let localdata: any = JSON.parse(localStorage.getItem('mykey') || '{}');
-    console.log(localdata);
-    
     if (localdata && localdata.email === data.emailid) {
       console.log(localdata && localdata.email === data.emailid);
-      
+
       if (localdata.password === data.password) {
         this.route.navigate(["/welcome"])
-        console.log("Valid form");
-        
+
       }
     }
     else {
-      console.log("2222222222");
       alert("enter valid emailid & Password")
     }
   }
