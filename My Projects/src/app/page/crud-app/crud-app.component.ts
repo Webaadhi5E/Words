@@ -9,7 +9,7 @@ import { HeaderComponent } from 'src/app/common/header/header.component';
 @Component({
   selector: 'app-crud-app',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule,HeaderComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent],
   templateUrl: './crud-app.component.html',
   styleUrl: './crud-app.component.scss'
 })
@@ -61,7 +61,25 @@ export class CrudAppComponent {
   public newName: string = "";
   public temIndex: any;
   constructor() {
-    this.displayedUserDetails = this.userObj
+    this.displayedUserDetails = this.userObj;
+    // var newObject = [{
+    //   id: 1,
+    //   name: "test",
+    //   city: [1, 2, 3, 1, 2]
+    // }, {
+    //   id: 2,
+    //   name: "test2",
+    //   city: [1, 3, 2]
+    // }, {
+    //   id: 3,
+    //   name: "test3",
+    //   city: [1, 3, 3]
+    // }];
+    // newObject.forEach(element => {
+    //   console.log(element);
+    //   element.city = [... new Set(element.city)]
+    // });
+    // console.log(newObject);
   }
 
   public renameCandidate() {

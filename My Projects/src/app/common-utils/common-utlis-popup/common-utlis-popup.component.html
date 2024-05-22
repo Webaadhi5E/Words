@@ -1,21 +1,42 @@
 <!-- Add User Modal -->
 <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModal" aria-hidden="true">
   <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addUserModal">Rename</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <!-- <input type="email" class="form-control m-0 rename-tag" name="renameAssets" [(ngModel)]="newName"
-                  placeholder="Rename Asset(s)" id="assetsRename" aria-describedby="assetsRename"
-                  (keyup.enter)="renameCandidate()"> -->
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <!-- <button type="button" class="btn btn-primary" (click)="renameCandidate()" data-bs-dismiss="modal">Save
-                  changes</button> -->
-          </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addUserModal">Add User</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        <form [formGroup]="addUserForm" (ngSubmit)="onSubmitForm()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Enter Name" id="name" formControlName="name" required
+              aria-describedby="text">
+          </div>
+          <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="text" class="form-control" placeholder="Enter Age" id="age" formControlName="age" required
+              aria-describedby="text">
+          </div>
+          <div class="mb-3">
+            <label for="experience" class="form-label">Experience</label>
+            <input type="text" class="form-control" placeholder="Enter Experience" id="experience"
+              formControlName="experience" required aria-describedby="text">
+          </div>
+          <div class="mb-3">
+            <div for="name" class="form-label">Languages Known</div>
+            <ng-select [items]="[]" [addTag]="true" [multiple]="true" formControlName="language" [selectOnTab]="true"
+              [isOpen]="false">
+            </ng-select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="addUserForm.invalid">Add New
+          User
+        </button>
+      </div>
+    </div>
   </div>
 </div>
