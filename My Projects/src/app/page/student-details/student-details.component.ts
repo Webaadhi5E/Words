@@ -3,13 +3,19 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from 'src/app/common/header/header.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { provideNativeDateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-student-details',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, HeaderComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, HeaderComponent, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatIconModule],
   templateUrl: './student-details.component.html',
-  styleUrl: './student-details.component.scss'
+  styleUrl: './student-details.component.scss',
+  providers: [provideNativeDateAdapter()],
 })
 export class StudentDetailsComponent {
 
@@ -18,8 +24,14 @@ export class StudentDetailsComponent {
   public studentName: string = "";
   public locationList: Array<any> = [];
   public displayedList: Array<any> = [];
+  public departmentList: Array<any> = [];
+  public isSearchEnable: boolean = false;
   constructor(private http: HttpClient) {
     this.getMainStudentsData();
+  }
+
+  public getToday() {
+    return new Date().toISOString().split('T')[0];
   }
 
   public getMainStudentsData() {
@@ -34,7 +46,12 @@ export class StudentDetailsComponent {
     this.displayedList.map((location: any) => {
       this.locationList.push(location.location);
     });
-    console.log(this.locationList);
+    this.displayedList.map((department: any) => {
+      this.departmentList.push(department.department)
+    })
+  }
+
+  public searchItems(e: any) {
 
   }
 }

@@ -1,54 +1,52 @@
 <div>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <div>
-                <img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png" alt="My Project" class="logo me-2">
-            </div>
-            <a class="navbar-brand" href="#">My Project</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="dropdown" (mouseleave)="isOpen = false">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    aria-haspopup="true" aria-expanded="false" (click)="isOpen = !isOpen">
-                    Projects
-                </button>
-                <ul class="dropdown-menu" [class.show]="isOpen" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" [routerLink]="['/project/user-details']"
-                            routerLinkActive="router-link-active">Users</a></li>
-                    <li><a class="dropdown-item" [routerLink]="['/project/color-pallet']"
-                            routerLinkActive="router-link-active">Color-Pallet</a></li>
-                    <li><a class="dropdown-item" [routerLink]="['/project/tables']"
-                            routerLinkActive="router-link-active">Tables</a></li>
-                    <li><a class="dropdown-item" [routerLink]="['/project/crud']"
-                            routerLinkActive="router-link-active">CRUD</a></li>
-                    <li><a class="dropdown-item" [routerLink]="['/project/student-details']"
-                            routerLinkActive="router-link-active">Student Details</a></li>
-                </ul>
-            </div>
-            <div class="ms-3" [ngClass]="scroll>100?'scroll-final-content':'scroll-pos-content'">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 px-4">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" [routerLink]="['/welcome/welcome-page']"
-                            routerLinkActive="router-link-active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="https://github.com/Webaadhi5E"
-                            [target]="'blank'">GitHub</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" (click)="logout()">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png" alt="My Project" class="logo me-2">
+      </div>
+      <a class="navbar-brand" href="#">My Project</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="dropdown" (mouseleave)="isOpen = false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" aria-haspopup="true"
+          aria-expanded="false" (click)="isOpen = !isOpen">
+          Projects
+        </button>
+        <ul class="dropdown-menu" [class.show]="isOpen" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" [routerLink]="['/project/user-details']"
+              [routerLinkActive]="['active']">Users</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/project/color-pallet']"
+              [routerLinkActive]="['active']">Color-Pallet</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/project/tables']" [routerLinkActive]="['active']">Tables</a>
+          </li>
+          <li><a class="dropdown-item" [routerLink]="['/project/crud']" [routerLinkActive]="['active']">CRUD</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/project/student-details']"
+              [routerLinkActive]="['active']">Student Details</a></li>
+        </ul>
+      </div>
+      <div class="ms-3" [ngClass]="scroll>100?'scroll-final-content':'scroll-pos-content'">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 px-4">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['/welcome/welcome-page']"
+              routerLinkActive="router-link-active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://github.com/Webaadhi5E"
+              [target]="'blank'">GitHub</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </div>
