@@ -1,0 +1,12 @@
+.main-page {
+  height: calc(100vh - 54px);
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.main-details-grid {
+  height: calc(100vh - 286px);
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
