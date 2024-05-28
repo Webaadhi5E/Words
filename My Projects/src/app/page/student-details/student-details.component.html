@@ -6,7 +6,15 @@
     </div>
     <section class="students-forms-section">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
+          <select class="form-select" aria-label="Default select example">
+            <option selected hidden>--- Select Item ---</option>
+            @for (listItems of dropDownField; track $index) {
+            <option [value]="listItems">{{listItems.value}}</option>
+            }
+          </select>
+        </div>
+        <div class="col-md-4">
           <div class="mt-3">
             <div class="mb-3">
               <label class="form-label fs-6 fw-bold" for="studentName">Student Name</label>
@@ -44,7 +52,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 mt-4">
+        <div class="col-md-4 mt-4">
           <div class="mb-3">
             <!-- <button class="btn btn-outline-success" type="submit" (click)="searchItems($event)">Search</button> -->
           </div>
@@ -66,9 +74,14 @@
           Students Data
         </div>
         <div class="main-details-grid">
-          @for (data of displayedList; track $index) {
-          <div>{{data.studentName}}</div>
-          }
+          <div class="student-header">
+            <div class="student-header-grid">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

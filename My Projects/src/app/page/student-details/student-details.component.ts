@@ -8,6 +8,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import { SEARCHDROPDOWN } from './student.interface';
 
 @Component({
   selector: 'app-student-details',
@@ -28,6 +29,8 @@ export class StudentDetailsComponent {
   public isSearchEnable: boolean = false;
   public locationSearch = new FormControl('');
   public departmentSearch = new FormControl('');
+  public isSearchVisible: boolean = false;
+  public dropDownField = SEARCHDROPDOWN;
   constructor(private http: HttpClient) {
     this.getMainStudentsData();
     this.locationSearch.valueChanges.subscribe((value: any) => this.filterLocation(value));
@@ -63,5 +66,10 @@ export class StudentDetailsComponent {
   public filterDepartment(department: string) {
     let searchedDepartment = department;
     this.displayedList = this.studentsMainDataList.filter((department: any) => department.department == searchedDepartment);
+  }
+
+  public onChangeSearchItems(e: any) {
+
+
   }
 }
