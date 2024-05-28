@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { Component, signal } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from 'src/app/common/header/header.component';
@@ -13,10 +13,9 @@ import { SEARCHDROPDOWN } from './student.interface';
 @Component({
   selector: 'app-student-details',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, HeaderComponent, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatIconModule],
   templateUrl: './student-details.component.html',
-  styleUrl: './student-details.component.scss',
-  providers: [provideNativeDateAdapter()],
+  styleUrl: './student-details.component.scss', imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatIconModule],
+  providers: [provideNativeDateAdapter(),]
 })
 export class StudentDetailsComponent {
 
