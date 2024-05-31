@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { Component, signal } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from 'src/app/common/header/header.component';
@@ -13,10 +13,9 @@ import { SEARCHDROPDOWN } from './student.interface';
 @Component({
   selector: 'app-student-details',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, HeaderComponent, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatIconModule],
   templateUrl: './student-details.component.html',
-  styleUrl: './student-details.component.scss',
-  providers: [provideNativeDateAdapter()],
+  styleUrl: './student-details.component.scss', imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatIconModule],
+  providers: [provideNativeDateAdapter(),]
 })
 export class StudentDetailsComponent {
 
@@ -29,8 +28,9 @@ export class StudentDetailsComponent {
   public isSearchEnable: boolean = false;
   public locationSearch = new FormControl('');
   public departmentSearch = new FormControl('');
-  public isSearchVisible: boolean = false;
+  public isSearchVisible: string = "";
   public dropDownField = SEARCHDROPDOWN;
+  public searchItems: string = "";
   constructor(private http: HttpClient) {
     this.getMainStudentsData();
     this.locationSearch.valueChanges.subscribe((value: any) => this.filterLocation(value));
@@ -68,7 +68,7 @@ export class StudentDetailsComponent {
     this.displayedList = this.studentsMainDataList.filter((department: any) => department.department == searchedDepartment);
   }
 
-  public onChangeSearchItems(e: any) {
+  public onChangeSearchItems(e: any, data: any) {
 
 
   }
