@@ -58,6 +58,20 @@ export class StudentDetailsComponent {
     })
   }
 
+  public searchName(e: any) {
+    if (!e?.target.value) {
+     return  (this.displayedList = this.studentsMainDataList)
+    } else {
+      this.displayedList = [];
+      this.studentsMainDataList.filter((any: any) => {
+        if (any.studentName.toLowerCase() === e?.target.value.toLowerCase()) {
+          this.displayedList.push(any);
+          console.log(this.displayedList);
+        }
+      })
+    }
+  }
+
   public filterLocation(location: string) {
     let searchedLocation = location.split(",")[0];
     this.displayedList = this.studentsMainDataList.filter((location: any) => location.location.split(",")[0] == searchedLocation);
