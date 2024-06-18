@@ -1,0 +1,28 @@
+.main-page {
+    height: 100vh;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.main-student-list-data {
+    height: calc(100vh - 190px);
+    overflow-y: scroll;
+
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

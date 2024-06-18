@@ -62,24 +62,6 @@ export class CrudAppComponent {
   public temIndex: any;
   constructor() {
     this.displayedUserDetails = this.userObj;
-    // var newObject = [{
-    //   id: 1,
-    //   name: "test",
-    //   city: [1, 2, 3, 1, 2]
-    // }, {
-    //   id: 2,
-    //   name: "test2",
-    //   city: [1, 3, 2]
-    // }, {
-    //   id: 3,
-    //   name: "test3",
-    //   city: [1, 3, 3]
-    // }];
-    // newObject.forEach(element => {
-    //   console.log(element);
-    //   element.city = [... new Set(element.city)]
-    // });
-    // console.log(newObject);
   }
 
   public renameCandidate() {
@@ -89,6 +71,10 @@ export class CrudAppComponent {
   public changeName(name: any, i: any) {
     this.newName = name;
     this.temIndex = i;
+  }
+
+  public removeCandidateDetails() {
+    this.displayedUserDetails.splice(0, 1)
   }
 
   public searchItem(e: any) {
@@ -104,9 +90,13 @@ export class CrudAppComponent {
     }
   }
 
+
   public openAddNewPopUp() {
     this.commonPopUpContainer.clear();
     this.commonPopUpComp = this.commonPopUpContainer.createComponent(CommonUtlisPopupComponent);
     this.commonPopUpComp.instance.openModalPopup();
+    this.commonPopUpComp.instance.emitForm.subscribe((event: any) => {
+      this.displayedUserDetails.unshift(event)
+    })
   }
 }
