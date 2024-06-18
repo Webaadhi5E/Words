@@ -1,0 +1,121 @@
+<div class="main-page">
+    <div class="container h-100">
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <div>
+                <div for="displayNumber" class="form-label">
+                    <div class="fs-6 fw-bold">
+                        Select Number of List to Display
+                    </div>
+                </div>
+                <input type="number" class="form-control" id="displayNumber" name="displayNumber"
+                    [(ngModel)]="selectedNumber" aria-describedby="displayList" min="0" max="20"
+                    (keyup.enter)="submitDisplayList()">
+            </div>
+            <div class="ms-auto">
+                <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal"
+                    data-bs-target="#renameModal">Add New Student Data</button>
+            </div>
+        </div>
+        <div class="main-student-list-data mt-4">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>DOB</th>
+                        <th>Gender</th>
+                        <th>Standard</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let items of displayedData.slice(startIndex, endIndex + 1); let i=index">
+                        <td>{{ items.id }}</td>
+                        <td>{{ items.name }}</td>
+                        <td>{{ items.roll_no }}</td>
+                        <td>{{ items.email }}</td>
+                        <td>{{ items.contact }}</td>
+                        <td>{{ items.address }}</td>
+                        <td>{{ items.dob | date }}</td> <!-- Convert Unix timestamp to date -->
+                        <td>{{ items.gender }}</td>
+                        <td>{{ items.standard }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="d-flex align-items-center gap-2 justify-content-center">
+            <button type="button" class="btn btn-primary rounded-pill" (click)="setPage(currentPage - 1)"
+                [disabled]="currentPage === 1">Previous</button>
+            <span>{{ currentPage }}</span>
+            <button type="button" class="btn btn-primary rounded-pill" (click)="setPage(currentPage + 1)"
+                [disabled]="endIndex === displayedData.length - 1">Next</button>
+        </div>
+    </div>
+</div>
+
+<!-- Rename Modal -->
+<div class="modal fade" id="renameModal" tabindex="-1" aria-labelledby="renameModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="renameModalLabel">Rename</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="addUserForm" (ngSubmit)="submitUserForm()">
+                    <div class="mb-3">
+                        <label for="studentName" class="form-label">Student Name</label>
+                        <input type="text" name="studentName" [placeholder]="'Enter Name'" class="form-control"
+                            id="studentName" aria-describedby="studentName" formControlName="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentDob" class="form-label">Student DOB</label>
+                        <input type="date" class="form-control" id="studentDob" name="studentDob"
+                            [placeholder]="'Enter DOB'" formControlName="dob" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentAddress" class="form-label">Student Address</label>
+                        <input type="text" class="form-control" id="studentAddress" name="studentAddress"
+                            [placeholder]="'Enter Address'" formControlName="address" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentEmail" class="form-label">Student Email</label>
+                        <input type="email" class="form-control" id="studentEmail" name="studentEmail"
+                            [placeholder]="'Enter Email'" formControlName="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentRollNo" class="form-label">Student Roll NO</label>
+                        <input type="text" class="form-control" id="studentRollNo" name="studentRollNo"
+                            [placeholder]="'Enter Roll No'" formControlName="rollno" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentStandard" class="form-label">Student Standard</label>
+                        <input type="text" class="form-control" id="studentStandard" name="studentStandard"
+                            [placeholder]="'Enter Standard'" formControlName="standard" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentContact" class="form-label">Student Contact</label>
+                        <input type="text" class="form-control" id="studentContact" name="studentContact"
+                            [placeholder]="'Enter Contact'" formControlName="contact" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentGender" class="form-label">Student Gender</label>
+                        <input type="text" class="form-control" id="studentGender" name="studentGender"
+                            [placeholder]="'Enter Gender'" formControlName="gender" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                        [disabled]="addUserForm.invalid">Add
+                        User</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save
+                    changes</button>
+            </div>
+        </div>
+    </div>
+</div>
