@@ -1,11 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-students-page',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './students-page.component.html',
   styleUrl: './students-page.component.scss'
 })
@@ -76,15 +77,21 @@ export class StudentsPageComponent {
   public submitUserForm() {
     if (this.addUserForm.valid) {
       const formData = this.addUserForm.value;
-      this.http.post<any>('https://66338431f7d50bbd9b49a5cf.mockapi.io/api/v1/students123', formData)
-        .subscribe(
-          (response) => {
-            console.log('Post success:', response);
-          },
-          (error) => {
-            console.error('Post error:', error);
-          }
-        );
+      // this.http.post('https://66338431f7d50bbd9b49a5cf.mockapi.io/api/v1/students123', formData)
+      //   .subscribe(
+      //     (response) => {
+      //       console.log('Post success:', response);
+      //     },
+      //     (error) => {
+      //       console.error('Post error:', error);
+      //     }
+      //   );
+      this.http.post('https://66338431f7d50bbd9b49a5cf.mockapi.io/api/v1/students123', formData).subscribe((resp) => {
+        console.log('Post success', resp);
+      }, (error) => {
+        console.log('Post Error', error);
+
+      })
     } else {
       console.error('Form is invalid');
     }
