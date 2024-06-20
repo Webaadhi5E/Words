@@ -1,0 +1,290 @@
+[
+    {
+        "studentName": "Ram Kumar",
+        "location": "Chennai, Tamil Nadu",
+        "registerDate": "2023-08-15",
+        "department": "Computer Science"
+    },
+    {
+        "studentName": "Priya Sharma",
+        "location": "Delhi, Delhi",
+        "registerDate": "2023-09-01",
+        "department": "Electronics and Communication"
+    },
+    {
+        "studentName": "Rahul Singh",
+        "location": "Mumbai, Maharashtra",
+        "registerDate": "2023-07-22",
+        "department": "Mechanical Engineering"
+    },
+    {
+        "studentName": "Aisha Khan",
+        "location": "Bangalore, Karnataka",
+        "registerDate": "2023-08-21",
+        "department": "Information Technology"
+    },
+    {
+        "studentName": "Sita Devi",
+        "location": "Kolkata, West Bengal",
+        "registerDate": "2023-06-10",
+        "department": "Civil Engineering"
+    },
+    {
+        "studentName": "Akash Patel",
+        "location": "Surat, Gujarat",
+        "registerDate": "2024-05-15",
+        "department": "Chemical Engineering"
+    },
+    {
+        "studentName": "Riya Malhotra",
+        "location": "Jaipur, Rajasthan",
+        "registerDate": "2024-05-14",
+        "department": "Biotechnology"
+    },
+    {
+        "studentName": "Vikram Joshi",
+        "location": "Pune, Maharashtra",
+        "registerDate": "2024-05-13",
+        "department": "Aerospace Engineering"
+    },
+    {
+        "studentName": "Pooja Desai",
+        "location": "Ahmedabad, Gujarat",
+        "registerDate": "2024-05-12",
+        "department": "Electrical Engineering"
+    },
+    {
+        "studentName": "Suresh Mehta",
+        "location": "Indore, Madhya Pradesh",
+        "registerDate": "2024-05-11",
+        "department": "Textile Engineering"
+    },
+    {
+        "studentName": "Suman Sharma",
+        "location": "Chandigarh, Chandigarh",
+        "registerDate": "2023-08-01",
+        "department": "Data Science"
+    },
+    {
+        "studentName": "Priyanka Singh",
+        "location": "Bhopal, Madhya Pradesh",
+        "registerDate": "2023-09-15",
+        "department": "Environmental Engineering"
+    },
+    {
+        "studentName": "Rahul Kapoor",
+        "location": "Hyderabad, Telangana",
+        "registerDate": "2023-10-05",
+        "department": "Marine Engineering"
+    },
+    {
+        "studentName": "Aisha Banerjee",
+        "location": "Pune, Maharashtra",
+        "registerDate": "2023-10-20",
+        "department": "Food Technology"
+    },
+    {
+        "studentName": "Kiran Devi",
+        "location": "Lucknow, Uttar Pradesh",
+        "registerDate": "2023-11-10",
+        "department": "Agriculture Engineering"
+    },
+    {
+        "studentName": "Akash Patel",
+        "location": "Ahmedabad, Gujarat",
+        "registerDate": "2023-11-25",
+        "department": "Petroleum Engineering"
+    },
+    {
+        "studentName": "Riya Malhotra",
+        "location": "Jaipur, Rajasthan",
+        "registerDate": "2023-12-15",
+        "department": "Fashion Design"
+    },
+    {
+        "studentName": "Vikram Joshi",
+        "location": "Chennai, Tamil Nadu",
+        "registerDate": "2024-01-01",
+        "department": "Architecture"
+    },
+    {
+        "studentName": "Pooja Desai",
+        "location": "Bangalore, Karnataka",
+        "registerDate": "2024-01-20",
+        "department": "Commerce"
+    },
+    {
+        "studentName": "Suresh Mehta",
+        "location": "Kolkata, West Bengal",
+        "registerDate": "2024-02-05",
+        "department": "Management"
+    },
+    {
+        "studentName": "Nikita Khan",
+        "location": "Surat, Gujarat",
+        "registerDate": "2024-02-20",
+        "department": "Literature"
+    },
+    {
+        "studentName": "Karan Singh",
+        "location": "Mumbai, Maharashtra",
+        "registerDate": "2024-03-05",
+        "department": "Psychology"
+    },
+    {
+        "studentName": "Anjali Gupta",
+        "location": "Delhi, Delhi",
+        "registerDate": "2024-03-20",
+        "department": "Fine Arts"
+    },
+    {
+        "studentName": "Mohit Kumar",
+        "location": "Patna, Bihar",
+        "registerDate": "2024-04-05",
+        "department": "Performing Arts"
+    },
+    {
+        "studentName": "Rani Devi",
+        "location": "Bhubaneswar, Odisha",
+        "registerDate": "2024-04-20",
+        "department": "Film Studies"
+    },
+    {
+        "studentName": "Akash Yadav",
+        "location": "Kanpur, Uttar Pradesh",
+        "registerDate": "2024-05-01",
+        "department": "Journalism"
+    },
+    {
+        "studentName": "Riya Verma",
+        "location": "Dehradun, Uttarakhand",
+        "registerDate": "2024-05-02",
+        "department": "Nursing"
+    },
+    {
+        "studentName": "Vikram Sharma",
+        "location": "Visakhapatnam, Andhra Pradesh",
+        "registerDate": "2024-05-03",
+        "department": "Pharmacy"
+    },
+    {
+        "studentName": "Pooja Joshi",
+        "location": "Srinagar, Jammu and Kashmir",
+        "registerDate": "2024-05-04",
+        "department": "Law"
+    },
+    {
+        "studentName": "Neha Patel",
+        "location": "Vadodara, Gujarat",
+        "registerDate": "2024-05-05",
+        "department": "Marketing"
+    },
+    {
+        "studentName": "Rahul Malhotra",
+        "location": "Jodhpur, Rajasthan",
+        "registerDate": "2024-05-06",
+        "department": "Accounting"
+    },
+    {
+        "studentName": "Aisha Kaur",
+        "location": "Chandigarh, Chandigarh",
+        "registerDate": "2024-05-07",
+        "department": "Human Resources"
+    },
+    {
+        "studentName": "Karan Agarwal",
+        "location": "Bhopal, Madhya Pradesh",
+        "registerDate": "2024-05-08",
+        "department": "Entrepreneurship"
+    },
+    {
+        "studentName": "Priya Tripathi",
+        "location": "Hyderabad, Telangana",
+        "registerDate": "2024-05-09",
+        "department": "Animation"
+    },
+    {
+        "studentName": "Vikram Das",
+        "location": "Pune, Maharashtra",
+        "registerDate": "2024-05-10",
+        "department": "Graphic Design"
+    },
+    {
+        "studentName": "Pooja Mishra",
+        "location": "Lucknow, Uttar Pradesh",
+        "registerDate": "2024-05-11",
+        "department": "Web Development"
+    },
+    {
+        "studentName": "Suresh Mehta",
+        "location": "Guwahati, Assam",
+        "registerDate": "2024-05-12",
+        "department": "Cybersecurity"
+    },
+    {
+        "studentName": "Nikita Rao",
+        "location": "Indore, Madhya Pradesh",
+        "registerDate": "2024-05-13",
+        "department": "Data Analytics"
+    },
+    {
+        "studentName": "Karan Bajaj",
+        "location": "Ahmedabad, Gujarat",
+        "registerDate": "2024-05-14",
+        "department": "Artificial Intelligence"
+    },
+    {
+        "studentName": "Priya Chopra",
+        "location": "Jaipur, Rajasthan",
+        "registerDate": "2024-05-15",
+        "department": "Machine Learning"
+    },
+    {
+        "studentName": "Vikram Mehta",
+        "location": "Chennai, Tamil Nadu",
+        "registerDate": "2024-05-16",
+        "department": "Robotics"
+    },
+    {
+        "studentName": "Pooja Shah",
+        "location": "Bangalore, Karnataka",
+        "registerDate": "2024-05-17",
+        "department": "Nanotechnology"
+    },
+    {
+        "studentName": "Suresh Kumar",
+        "location": "Kolkata, West Bengal",
+        "registerDate": "2024-05-18",
+        "department": "Astronomy"
+    },
+    {
+        "studentName": "Nikita Sharma",
+        "location": "Mumbai, Maharashtra",
+        "registerDate": "2024-05-19",
+        "department": "Environmental Science"
+    },
+    {
+        "studentName": "Karan Joshi",
+        "location": "Delhi, Delhi",
+        "registerDate": "2024-05-20",
+        "department": "Public Health"
+    },
+    {
+        "studentName": "Priya Patel",
+        "location": "Patna, Bihar",
+        "registerDate": "2024-05-21",
+        "department": "Social Work"
+    },
+    {
+        "studentName": "Vikram Singh",
+        "location": "Bhubaneswar, Odisha",
+        "registerDate": "2024-05-22",
+        "department": "Education"
+    },
+    {
+        "studentName": "Pooja Kaur",
+        "location": "Kanpur, Uttar Pradesh",
+        "registerDate": "2024-05-23",
+        "department": "Linguistics"
+    }
+]
