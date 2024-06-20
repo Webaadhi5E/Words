@@ -5,13 +5,15 @@ import { ColorPalletsComponent } from '../page/color-pallets/color-pallets.compo
 import { MultiplicationTablesComponent } from '../page/tables/multiplication-tables/multiplication-tables.component';
 import { CrudAppComponent } from '../page/crud-app/crud-app.component';
 import { StudentDetailsComponent } from '../page/student-details/student-details.component';
+import { StudentsPageComponent } from '../page/students-page/students-page.component';
 
 const routes: Routes = [
   { path: 'user-details', component: UserDetailComponent, title: 'Users-Detail' },
   { path: 'color-pallet', component: ColorPalletsComponent, title: "Colors-Pallet" },
   { path: 'tables', component: MultiplicationTablesComponent, title: 'Multiplication-Tables' },
   { path: 'crud', component: CrudAppComponent, title: 'CRUD-Project' },
-  { path: 'student-details', component: StudentDetailsComponent, title: 'Student-Details' },
+  { path: 'candidate', component: StudentsPageComponent, title: 'Candidate Details' },
+  // { path: 'student-details', component: StudentDetailsComponent, title: 'Student-Details' },
 ];
 
 @NgModule({

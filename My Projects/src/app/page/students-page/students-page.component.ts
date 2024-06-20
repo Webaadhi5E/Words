@@ -1,26 +1,31 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonUtlisPopupComponent } from 'src/app/common-utils/common-utlis-popup/common-utlis-popup.component';
 
 @Component({
   selector: 'app-students-page',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './students-page.component.html',
   styleUrl: './students-page.component.scss'
 })
 export class StudentsPageComponent {
+
+  @ViewChild('commonPopUp', { read: ViewContainerRef })
+  commonPopUpContainer!: ViewContainerRef;
+  public commonPopUpComp!: ComponentRef<CommonUtlisPopupComponent>;
+
   public originalData: Array<any> = [];
   public displayedData: Array<any> = [];
   public selectedNumber: number = 0;
   public currentPage: number = 1;
   public itemsPerPage: number = 5;
-  public addUserForm: FormGroup | any;
   public showStudentDetail: any;
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
     this.getStudentData();
     this.submitDisplayList();
-    this.prepareFormObj();
 
   }
 
@@ -36,13 +41,9 @@ export class StudentsPageComponent {
   }
 
   public submitDisplayList() {
-    console.log(this.selectedNumber);
-
     if (this.selectedNumber) {
       this.displayedData = [];
       this.displayedData = this.originalData.slice(0, this.selectedNumber);
-      console.log(this.displayedData);
-
       this.selectedNumber = 0;
     } else {
       this.displayedData = [];
@@ -60,35 +61,14 @@ export class StudentsPageComponent {
   public setPage(page: number): void {
     this.currentPage = page;
   }
-  public prepareFormObj() {
-    this.addUserForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      dob: ['', Validators.required],
-      address: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]], // Apply email validator here
-      rollno: ['', Validators.required],
-      standard: ['', Validators.required],
-      contact: ['', Validators.required],
-      gender: ['', Validators.required],
-    });
+
+  public openAddNewPopUp() {
+    this.commonPopUpContainer.clear();
+    this.commonPopUpComp = this.commonPopUpContainer.createComponent(CommonUtlisPopupComponent);
+    this.commonPopUpComp.instance.openCandidateModalPopup();
+    // this.commonPopUpComp.instance.emitForm.subscribe((event: any) => {
+    // this.displayedData.unshift(event);
+    // })
   }
 
-  public submitUserForm() {
-    if (this.addUserForm.valid) {
-      const formData = this.addUserForm.value;
-      this.http.post<any>('https://66338431f7d50bbd9b49a5cf.mockapi.io/api/v1/students123', formData)
-        .subscribe(
-          (response) => {
-            console.log('Post success:', response);
-          },
-          (error) => {
-            console.error('Post error:', error);
-          }
-        );
-    } else {
-      console.error('Form is invalid');
-    }
-
-    this.addUserForm.reset();
-  }
 }
