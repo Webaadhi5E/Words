@@ -1,4 +1,5 @@
 <div class="main-page">
+  <app-header></app-header>
   <div class="container h-100">
     <div class="d-flex align-items-center gap-2 mt-4">
       <div>
@@ -8,10 +9,11 @@
           </div>
         </div>
         <input type="number" class="form-control" id="displayNumber" name="displayNumber" [(ngModel)]="selectedNumber"
-          aria-describedby="displayList" min="0" max="20" (keyup.enter)="submitDisplayList()">
+          aria-describedby="displayList" min="0" [max]="displayedData.length" (keyup.enter)="submitDisplayList()">
       </div>
       <div class="ms-auto">
-        <button type="button" class="btn btn-primary rounded-pill" (click)="openAddNewPopUp()">Add New Student Data</button>
+        <button type="button" class="btn btn-primary rounded-pill" (click)="openAddNewPopUp()">Add New Student
+          Data</button>
       </div>
     </div>
     <div class="main-student-list-data mt-4">

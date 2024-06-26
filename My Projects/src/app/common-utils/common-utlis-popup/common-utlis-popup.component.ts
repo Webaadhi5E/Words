@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 
@@ -18,8 +19,8 @@ export class CommonUtlisPopupComponent {
   public addUserForm!: FormGroup;
   public newCandidateForm!: FormGroup;
   formBuilder: any;
-  http: any;
   public openCandidatePopup: any;
+  protected http = inject(HttpClient)
   constructor() {
     this.prepareForm();
     this.prepareFormObj();
@@ -60,26 +61,24 @@ export class CommonUtlisPopupComponent {
   }
 
   public submitUserForm() {
-    if (this.newCandidateForm.valid) {
-      const formData = this.newCandidateForm.value;
-      // this.http.post('https://66338431f7d50bbd9b49a5cf.mockapi.io/api/v1/students123', formData)
-      //   .subscribe(
-      //     (response) => {
-      //       console.log('Post success:', response);
-      //     },
-      //     (error) => {
-      //       console.error('Post error:', error);
-      //     }
-      //   );
-      this.http.post('https://66338431f7d50bbd9b49a5cf.mockapi.io/api/v1/students123', formData).subscribe((resp: any) => {
-        console.log('Post success', resp);
-      }, (error: any) => {
+    // if (this.newCandidateForm.valid) {
+    //   const formData = this.newCandidateForm.value;
+    //   this.http.post('https://66338431f7d50bbd9b49a5cf.mockapi.io/api/v1/students123', formData)
+    //     .subscribe(
+    //       (response:any) => {
+    //         console.log('Post success:', response);
+    //       },
+    //       (error:any) => {
+    //         console.error('Post error:', error);
+    //       }
+    //     );}
+    const formData = this.newCandidateForm.value;
+    this.http.post('https://66338431f7d50bbd9b49a5cf.mockapi.io/api/v1/students123', formData).subscribe((resp: any) => {
+      console.log('Post Success', resp);
+    }),
+      (error: any) => {
         console.log('Post Error', error);
-
-      })
-    } else {
-      console.error('Form is invalid');
-    }
+      }
     this.newCandidateForm.reset();
   }
 
