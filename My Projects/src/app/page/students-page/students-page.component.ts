@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonUtlisPopupComponent } from 'src/app/common-utils/common-utlis-popup/common-utlis-popup.component';
+import { HeaderComponent } from '../../common/header/header.component';
 
 @Component({
   selector: 'app-students-page',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent],
   templateUrl: './students-page.component.html',
   styleUrl: './students-page.component.scss'
 })
@@ -66,9 +67,9 @@ export class StudentsPageComponent {
     this.commonPopUpContainer.clear();
     this.commonPopUpComp = this.commonPopUpContainer.createComponent(CommonUtlisPopupComponent);
     this.commonPopUpComp.instance.openCandidateModalPopup();
-    // this.commonPopUpComp.instance.emitForm.subscribe((event: any) => {
-    // this.displayedData.unshift(event);
-    // })
+    this.commonPopUpComp.instance.emitForm.subscribe((event: any) => {
+    this.displayedData.unshift(event);
+    })
   }
 
 }
