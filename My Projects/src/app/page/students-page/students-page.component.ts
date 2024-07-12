@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ComponentRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonUtlisPopupComponent } from 'src/app/common-utils/common-utlis-popup/common-utlis-popup.component';
 import { HeaderComponent } from '../../common/header/header.component';
@@ -12,7 +12,7 @@ import { HeaderComponent } from '../../common/header/header.component';
   templateUrl: './students-page.component.html',
   styleUrl: './students-page.component.scss'
 })
-export class StudentsPageComponent {
+export class StudentsPageComponent implements OnInit {
 
   @ViewChild('commonPopUp', { read: ViewContainerRef })
   commonPopUpContainer!: ViewContainerRef;
@@ -25,9 +25,11 @@ export class StudentsPageComponent {
   public itemsPerPage: number = 5;
   public showStudentDetail: any;
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
-    this.getStudentData();
     this.submitDisplayList();
+  }
 
+  ngOnInit(): void {
+    this.getStudentData()
   }
 
   public getStudentData() {
@@ -63,12 +65,17 @@ export class StudentsPageComponent {
     this.currentPage = page;
   }
 
+  public getEmittedData(e: any) {
+    this.displayedData.unshift(e);
+    this.getStudentData();
+  }
+
   public openAddNewPopUp() {
     this.commonPopUpContainer.clear();
     this.commonPopUpComp = this.commonPopUpContainer.createComponent(CommonUtlisPopupComponent);
     this.commonPopUpComp.instance.openCandidateModalPopup();
     this.commonPopUpComp.instance.emitForm.subscribe((event: any) => {
-    this.displayedData.unshift(event);
+      this.getEmittedData(event)
     })
   }
 
