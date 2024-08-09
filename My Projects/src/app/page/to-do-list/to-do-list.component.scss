@@ -1,0 +1,14 @@
+.main-grid{
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.header-title {
+  color: red;
+}
+
+.product-list{
+  padding: 20px;
+  height: calc(100vh - 354px);
+}
