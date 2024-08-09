@@ -10,9 +10,7 @@ import { HeaderComponent } from 'src/app/common/header/header.component';
 })
 export class ReactiveFormComponent {
 
-  constructor(){
-   let newValue= sessionStorage.getItem('formData');
-   console.log(newValue);
-
+  public multiply(a: any, b: any) {
+    return a * b;
   }
 }

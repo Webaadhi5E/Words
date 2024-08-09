@@ -20,10 +20,10 @@ export class TemplateDrivenFormComponent {
   public submitForm(tdForm: NgForm) {
     this.formDetails = tdForm;
     if (this.formDetails.valid) {
-      sessionStorage.setItem("formData", JSON.stringify(this.formDetails.value));
-      this.formDetails.reset()
+      sessionStorage.setItem('formData', JSON.stringify(this.formDetails.value));
+      this.formDetails.reset();
     } else {
-      alert("Enter Valid Form Data")
+      alert('Enter Valid Form Data');
     }
   }
-}
+  }

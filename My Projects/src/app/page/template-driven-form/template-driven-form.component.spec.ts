@@ -11,7 +11,7 @@ describe('TemplateDrivenFormComponent', () => {
       imports: [TemplateDrivenFormComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(TemplateDrivenFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -2,7 +2,8 @@ import { HoverHighlightDirective } from './hover-highlight.directive';
 
 describe('HoverHighlightDirective', () => {
   it('should create an instance', () => {
-    const directive = new HoverHighlightDirective();
+    let newColor:any=""
+    const directive = new HoverHighlightDirective(newColor);
     expect(directive).toBeTruthy();
   });
 });
