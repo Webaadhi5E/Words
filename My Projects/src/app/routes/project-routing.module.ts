@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserDetailComponent } from '../page/user-project/user-detail.component';
 import { ColorPalletsComponent } from '../page/color-pallets/color-pallets.component';
-import { MultiplicationTablesComponent } from '../page/tables/multiplication-tables/multiplication-tables.component';
 import { CrudAppComponent } from '../page/crud-app/crud-app.component';
-import { StudentDetailsComponent } from '../page/student-details/student-details.component';
 import { StudentsPageComponent } from '../page/students-page/students-page.component';
+import { MultiplicationTablesComponent } from '../page/tables/multiplication-tables/multiplication-tables.component';
 import { ToDoListComponent } from '../page/to-do-list/to-do-list.component';
-import { TemplateDrivenFormComponent } from '../page/template-driven-form/template-driven-form.component';
-import { ReactiveFormComponent } from '../page/reactive-form/reactive-form.component';
+import { UserDetailComponent } from '../page/user-project/user-detail.component';
 
 const routes: Routes = [
   { path: 'user-details', component: UserDetailComponent, title: 'Users-Detail' },
@@ -17,8 +14,6 @@ const routes: Routes = [
   { path: 'crud', component: CrudAppComponent, title: 'CRUD-Project' },
   { path: 'candidate', component: StudentsPageComponent, title: 'Candidate Details' },
   { path: 'to-do', component: ToDoListComponent, title: 'To-Do-List-Page' },
-  { path: 'template-driven', component: TemplateDrivenFormComponent, title: 'Template-Driven' },
-  { path: 'reactive-form', component: ReactiveFormComponent, title: 'Reactive-Form' },
   // { path: 'student-details', component: StudentDetailsComponent, title: 'Student-Details' },
 ];
 
