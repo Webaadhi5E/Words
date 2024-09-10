@@ -19,7 +19,6 @@ export class HeaderComponent {
   }
 
   public logout() {
-    localStorage.removeItem('mykey');
     this.router.navigate(['login']);
   }
 }

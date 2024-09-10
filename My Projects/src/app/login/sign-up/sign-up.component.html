@@ -1,130 +1,34 @@
-<div class="header">
-    <section class="vh-100" style="background-color: #2b1f1f;">
-        <div class="container h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-lg-12 col-xl-11">
-                    <div class="card text-black" style="border-radius: 50px;">
-                        <div class="card-body md-5 p-0">
-                            <div class="row justify-content-center">
-                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                                    <div class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 signin">Sign up</div>
-                                    <form class="mx-1 mx-md-4" [formGroup]="registrationForm" (ngSubmit)="onsubmit()">
-
-                                        <div class="d-flex flex-row align-items-center mb-4">
-                                            <i class="fas fa-user fa-lg me-3 fa-fw mt-3 icon"></i>
-                                            <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="userName"></label>
-                                                <input type="text" id="userName" class="form-control"
-                                                    formControlName="userName" [placeholder]="'Your Name'" required
-                                                    [ngClass]="{ 'is-invalid': submitted && form['userName'].errors }" />
-                                            </div>
-                                            <div *ngIf="submitted && form['userName'].errors" class="invalid-feedback">
-                                                <div *ngIf="form['userName'].errors['required']">Name is required
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex flex-row align-items-center mb-4">
-                                            <i class="fas fa-envelope fa-lg me-3 fa-fw mt-3 icon"></i>
-                                            <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="email"></label>
-                                                <input type="email" id="email" class="form-control"
-                                                    formControlName="email" [placeholder]="'Your Email'" required
-                                                    [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" />
-                                            </div>
-                                            <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
-                                                <div *ngIf="form['email'].errors['required']">Email is required
-                                                </div>
-                                                <div *ngIf="form['email'].errors['email']">Email must be a valid
-                                                    email address</div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex flex-row align-items-center mb-4">
-                                            <i class="fas fa-lock fa-lg me-3 fa-fw mt-3 icon"></i>
-                                            <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="password"></label>
-                                                <input type="password" id="password" class="form-control"
-                                                    formControlName="password" [placeholder]="'Password'" id="passID"
-                                                    (keyup.enter)="passwordValidator($event)"
-                                                    (input)="passwordValidator($event);"
-                                                    (change)="passwordValidator($event);" required
-                                                    [ngClass]="{ 'is-invalid': submitted && form['password'].errors }" />
-                                            </div>
-                                            <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
-                                                <div *ngIf="form['password'].errors['required']">Password is
-                                                    required</div>
-                                                <div *ngIf="form['password'].errors['minlength']">Password must be
-                                                    at least 6
-                                                    characters</div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex flex-row align-items-center mb-4">
-                                            <i class="fas fa-key fa-lg me-3 fa-fw mt-3 icon"></i>
-                                            <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="confirmPassword"></label>
-                                                <input type="password" id="confirmPassword" class="form-control"
-                                                    formControlName="confirmPassword" [placeholder]="'Confirm Password'"
-                                                    required
-                                                    [ngClass]="{ 'is-invalid': submitted && form['confirmPassword'].errors }" />
-                                            </div>
-                                            <div *ngIf="submitted && form['confirmPassword'].errors"
-                                                class="invalid-feedback">
-                                                <div *ngIf="form['confirmPassword'].errors['required']">Confirm
-                                                    Password is required</div>
-                                            </div>
-                                        </div>
-
-                                        <!-- validation -->
-                                        <div class="password-validators-group" *ngIf="showPasswordSection">
-                                            <ul>
-                                                <li class="password-validators check-list-heading">
-                                                    <span class="check-icon">
-                                                        <i class="fas fa-shield" aria-hidden="true"></i>
-                                                    </span>
-                                                    <span>
-                                                        Password Rules
-                                                    </span>
-                                                </li>
-                                                <li class="password-validators" *ngFor="let item of passwordCheckList">
-                                                    <span class="check-icon" [class]="item?.class">
-                                                        <i class="fas" [class.fa-check]="item?.class === 'check'"
-                                                            [class.text-white]="passwordText.length === 0"
-                                                            [class.fa-times]="item?.class === 'uncheck'"></i>
-                                                    </span>
-                                                    <span>
-                                                        {{item?.text}}
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="form-check d-flex justify-content-center mb-5">
-                                            <input class="form-check-input me-2" type="checkbox" value=""
-                                                id="acceptTerms" formControlName="acceptTerms" required
-                                                [ngClass]="{ 'is-invalid': submitted && form['acceptTerms'].errors }" />
-                                            <label class="form-check-label" for="acceptTerms">
-                                                I agree all statements in <a [routerLink]="['/common']">Terms of
-                                                    service</a>
-                                            </label>
-                                        </div>
-                                        <div class="d-flex align-items-center my-2 mx-2">
-                                            <div class="d-flex justify-content-center mx-4 lg-4">
-                                                <button type="submit" class="btn btn-primary btn-lg">Register</button>
-                                            </div>
-                                            <div>
-                                                <button class="btn btn-secondary btn-lg reset-button ms-auto"
-                                                    type="reset" (click)="onReset()">Reset</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                                        class="img-fluid" alt="Sample image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="h-100">
+  <div class="d-flex align-items-center justify-content-center h-100">
+    <form [formGroup]="newAccountForm" (ngSubmit)="submitForm()">
+      <div class="sign-up-form">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">Firstname</label>
+          <input type="text" class="form-control" id="firstName" formControlName="firstName"
+            aria-describedby="firstName">
         </div>
-    </section>
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Lastname</label>
+          <input type="text" class="form-control" id="lastName" formControlName="lastName" name="lastName"
+            aria-describedby="lastName">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" class="form-control" formControlName="email" name="email" id="email">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm-password</label>
+          <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+        </div>
+        <div class="d-flex-align-items-center gap-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-outline-dark ms-3" (click)="resetForm()">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
