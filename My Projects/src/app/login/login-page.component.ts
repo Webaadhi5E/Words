@@ -41,7 +41,7 @@ export class LoginPageComponent {
   }
 
   public checkLocalData(data: any) {
-    let localdata: any = JSON.parse(localStorage.getItem('mykey') || '{}');
+    let localdata: any = JSON.parse(sessionStorage.getItem('mykey') || '{}');
     if (localdata && localdata.email === data.emailid) {
       console.log(localdata && localdata.email === data.emailid);
 

@@ -61,17 +61,6 @@ export class CommonUtlisPopupComponent {
   }
 
   public submitUserForm() {
-    // if (this.newCandidateForm.valid) {
-    //   const formData = this.newCandidateForm.value;
-    //   this.http.post('https://66338431f7d50bbd9b49a5cf.mockapi.io/api/v1/students123', formData)
-    //     .subscribe(
-    //       (response:any) => {
-    //         console.log('Post success:', response);
-    //       },
-    //       (error:any) => {
-    //         console.error('Post error:', error);
-    //       }
-    //     );}
     const formData = this.newCandidateForm.value;
     this.http.post('https://66338431f7d50bbd9b49a5cf.mockapi.io/api/v1/students123', formData).subscribe((resp: any) => {
       console.log('Post Success', resp);
